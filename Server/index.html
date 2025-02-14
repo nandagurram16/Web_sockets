@@ -1,0 +1,21 @@
+<!-- index.html is a "clint" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSockets</title>
+</head>
+<body>
+    <script>
+        const ws = new WebSocket('ws://localhost:8081')
+        ws.addEventListener('open',()=>{
+            console.log('connected to backend')
+            ws.send('iam Nanda learning websockets')
+        })
+        ws.addEventListener('message',({data}) =>{
+            console.log(data)
+        })
+    </script>
+</body>
+</html>
